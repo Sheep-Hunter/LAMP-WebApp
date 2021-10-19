@@ -1,0 +1,64 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    max-width: 800px;
+    padding: 30px;
+    margin: 0 auto;
+  }
+  
+  a {
+    color: #00B7FF;
+  }
+  
+  .right {
+    float: right;
+    display: inline-block;
+  }
+  
+  .items {
+    display: flex;
+  }
+  
+  .items img {
+    max-width: 50%;
+    max-height: 50%;
+  }
+  
+  #login {
+    text-align: center;
+  }
+  
+  input, textarea {
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+    padding: 20px;
+    font-size: 36px;
+  }
+  
+  nav {
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  nav a {
+    color: #fff
+  }
+  
+  .message {
+    margin: 20px;
+    padding: 20px;
+    flex-direction: row;
+    display: inline-block;
+    background: #ccc;
+  }
+  
+  .unread {
+    background: #fff098
+  }
+  
+  .messages {
+    display: flex;
+  }
+  
