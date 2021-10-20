@@ -33,7 +33,7 @@
 				<table>
 					<tr>
 						<td>Username:</td>
-						<td><?=$_SESSION['login_user']?></td>
+						<td><?=$_SESSION['id']?></td>
 					</tr>
 					<tr>
 						<td>Password:</td>
