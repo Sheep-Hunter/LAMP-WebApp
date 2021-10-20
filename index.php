@@ -21,13 +21,11 @@
 
             <?php
                 if(isset($_SESSION['loggedin'])){
-                    echo 'logged in';
-                   echo '<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
+                    echo '<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
 			        <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>';
                 }
                    
                 else {
-                    echo 'not logged in';
                     echo '<a href="/login.php">Login</a>
                     <a href="/signup.php">signup</a>';}
             ?>
