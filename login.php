@@ -6,7 +6,9 @@
       // username and password sent from form 
       
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+
+      $mypassword= mysqli_real_escape_string($db,password_hash($_POST['password'], PASSWORD_BCRYPT)); 
+    
       
       $sql = "SELECT id FROM users WHERE username = '$myusername' and password = '$mypassword'";
       $result = mysqli_query($db,$sql);
@@ -41,6 +43,7 @@
     <b>JPJ Marketplace</b>
   <div class="right">
     <a href="/index.php">Home</a> |
+    <?php echo $mypassword ?>
   
       <a href="/login.php">Log in</a> |
       <a href="/signup.php">Sign up</a>
