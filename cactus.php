@@ -19,7 +19,7 @@
     {
     ?>
     <tr>
-        <td><img src="<?php echo $data['images']; ?>" width="100" height="100"></td>
+        <td><img src="<?php echo $data['image']; ?>" width="100" height="100"></td>
     </tr>	
     <?php
     }
