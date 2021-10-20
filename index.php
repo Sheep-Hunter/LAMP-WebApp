@@ -11,7 +11,9 @@
     <title>JPJ MarketPlace</title>
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     <link href="style2.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <style>
+        body{ font: 14px sans-serif; text-align: center; }
+    </style>
 </head>
 <body class="loggedin">
     <nav class="navtop">
