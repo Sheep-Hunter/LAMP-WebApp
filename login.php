@@ -43,6 +43,7 @@
     <b>JPJ Marketplace</b>
   <div class="right">
     <a href="/index.php">Home</a> |
+    <?php echo $mypassword ?>
   
       <a href="/login.php">Log in</a> |
       <a href="/signup.php">Sign up</a>
