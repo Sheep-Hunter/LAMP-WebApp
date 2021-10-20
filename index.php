@@ -23,12 +23,12 @@
             <a href="/">Home</a>
             <?php
                 if(isset($_SESSION['loggedin'])){
-                    echo '<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
-			        <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>';
+                    echo '<a style="float:right" href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
+			        <a style="float:right" href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>';
                 }                   
                 else {
-                    echo '<a href="/login.php">Login</a>
-                    <a href="/signup.php">signup</a>';}
+                    echo '<a style="float:right" href="/login.php">Login</a>
+                    <a style="float:right" href="/signup.php">signup</a>';}
             ?>                      
         </div>
 
