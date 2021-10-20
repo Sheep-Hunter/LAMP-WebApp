@@ -81,6 +81,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </style>
     </head>
     <body>
+    <nav class="navtop">
+			<div>
+				<a href="index.php"><h1>JPJ MarketPlace</h1></a>
+				<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
+				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+			</div>
+		</nav>
         <div class="wrapper">
             <h2>Reset Password</h2>
             <p>Please fill out this form to reset your password.</p>
