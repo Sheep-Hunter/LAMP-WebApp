@@ -14,7 +14,7 @@
     <link href="style2.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 </head>
-<body>
+<body class="loggedin">
     <nav class="navtop">
         <b>JPJ MarketPlace</b>
         <div class="right">
