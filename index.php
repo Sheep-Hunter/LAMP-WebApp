@@ -22,7 +22,7 @@
         </div>
         <div>
             <a herf="/cactus.php"><h1>Cactus</h1></a>
-            <img src="/Thinking-of-getting-a-cat.png" />
+            <img src="/cat1.jpeg" />
         </div>
     </div>
 </body>
