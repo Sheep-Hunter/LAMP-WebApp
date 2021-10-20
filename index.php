@@ -18,14 +18,9 @@
 <body class="loggedin">
     <nav class="navtop">
         
-        <div class = row>
-            <div class="column">
-            <a href="index.php"><h1>JPJ MarketPlace</h1></a>
-            </div>
-            <div class="column">
-            </div>
-
-            <div class="column">
+        <div>
+            
+            <a href="index.php"><h1>JPJ MarketPlace</h1></a>            
             <a href="/">Home</a>
             <?php
                 if(isset($_SESSION['loggedin'])){
@@ -35,8 +30,7 @@
                 else {
                     echo '<a style="float:right" href="/login.php">Login</a>
                     <a style="float:right" href="/signup.php">signup</a>';}
-            ?>     
-            </div>                 
+            ?>                      
         </div>
 
     </nav class="content">
