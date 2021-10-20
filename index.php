@@ -53,13 +53,15 @@ div.container {
     <div class='items'>
 
         <div class='polaroid'>
-            <a href="/delllaptop.php"><h1>Dell Laptop</h1></a>
-            <div class='container'><img src="/images/cat1.jpeg" /></div>
+                <img src="/images/cat1.jpeg" />
+            
+            <div class='container'><a href="/delllaptop.php"><h1>Dell Laptop</h1></a></div>
         </div>
 
         <div class='polaroid'>
-            <a href="/cactus.php"><h1>Cactus</h1></a>
-            <div class='container'><img src="/images/cat1.jpeg" /></div>
+            <img src="/images/cat1.jpeg" />
+            
+            <div class='container'><a href="/cactus.php"><h1>Cactus</h1></a></div>
         </div>
     </div>
 </body>
