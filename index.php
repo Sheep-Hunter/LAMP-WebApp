@@ -31,7 +31,7 @@
             ?>                      
         </div>
 
-    </nav class=content>
+    </nav class="content">
 
     <div class='items'>
 
