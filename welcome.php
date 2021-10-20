@@ -18,15 +18,20 @@
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <style>
         body{ font: 14px sans-serif; text-align: center; }
     </style>
 </head>
-<body>
+<body class="loggedin">
+<nav class="navtop">
     <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["login_user"]); ?></b>. Welcome to our site.</h1>    
     <p>
+
         <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
     </p>
+</nav>
 </body>
 </html>
