@@ -13,7 +13,7 @@
 
     include "config.php"; // Using database connection file here
 
-    $records = mysqli_query($db,"select * from product_images WHERE name = 'cat1'"); // fetch data from database
+    $records = mysqli_query($db,"select * from product_images WHERE name = 'cactus'"); // fetch data from database
 
     while($data = mysqli_fetch_array($records))
     {
