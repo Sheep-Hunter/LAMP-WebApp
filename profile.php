@@ -13,6 +13,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Profile Page</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<link href="style2.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 	</head>
@@ -43,6 +44,14 @@
 					</tr>
 				</table>
 			</div>
+			<nav>
+    		<h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["login_user"]); ?></b>. Welcome to our site.</h1>    
+    		<p>
+
+       			<a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
+        		<a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
+    		</p>
+			</nav>
 		</div>
 	</body>
 </html>

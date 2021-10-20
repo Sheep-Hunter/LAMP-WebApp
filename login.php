@@ -27,7 +27,7 @@
             $_SESSION["id"] = $id;
             $_SESSION["username"] = $username;
             echo "Success!";
-            header("location: welcome.php");
+            header("location: profile.php");
       }else {
          $error = "Your Login Name or Password is invalid";
       }
