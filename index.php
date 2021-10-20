@@ -17,7 +17,7 @@
 body {margin:25px;}
 
 div.polaroid {
-  width: 25%;
+  width: 50%;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
@@ -35,7 +35,7 @@ div.polaroid {
   display: table;
 }
 
-img {width: 50%}
+img {width: 100%}
 
 div.container {
   text-align: center;
