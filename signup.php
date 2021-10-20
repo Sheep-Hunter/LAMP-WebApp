@@ -38,7 +38,7 @@ if (isset($_POST['reg_user'])) {
 
     }
 
-    if (count($errors) == 0) {
+    else {
         
   
         $query = "INSERT INTO users (username, password) VALUES('$username', '$password')";
