@@ -22,6 +22,18 @@ div.polaroid {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
 }
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 img {width: 50%}
 
@@ -50,19 +62,24 @@ div.container {
 
     </nav class="content">
 
-    <div class='items'>
-
+    <div class='row'>
+        
+    <div class='column'>
         <div class='polaroid'>
                 <img src="/images/cat1.jpeg" />
             
             <div class='container'><a href="/delllaptop.php"><h1>Dell Laptop</h1></a></div>
         </div>
+    </div>
 
+
+    <div class='column'>
         <div class='polaroid'>
             <img src="/images/cat1.jpeg" />
             
             <div class='container'><a href="/cactus.php"><h1>Cactus</h1></a></div>
         </div>
+                </div>
     </div>
 </body>
 </html>
