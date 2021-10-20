@@ -23,6 +23,8 @@ div.polaroid {
   margin-bottom: 25px;
 }
 
+img {width: 100%}
+
 div.container {
   text-align: center;
   padding: 10px 20px;
