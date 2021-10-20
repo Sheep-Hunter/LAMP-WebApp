@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    include('config.php');
+    if(!isset($_SESSION['loggedin']) || $_SESSION["loggedin"] !== true){
+        header('Location: login.php');
+        exit;
+    } else {
+        // Show users the page!
+    }
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,7 +19,7 @@
 	<body class="loggedin">
 		<nav class="navtop">
 			<div>
-				<h1>Website Title</h1>
+				<h1 href="index.php">Website Title</h1>
 				<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
 				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			</div>
