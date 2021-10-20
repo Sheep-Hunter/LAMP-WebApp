@@ -18,11 +18,11 @@
     <div class='items'>
         <div>
             <a herf="/delllaptop.php"><h1>Dell Laptop</h1></a>
-            <img src="/cat1.jpeg" />
+            <img src="/images/cat1.jpeg" />
         </div>
         <div>
             <a herf="/cactus.php"><h1>Cactus</h1></a>
-            <img src="/cat1.jpeg" />
+            <img src="/images/cat1.jpeg" />
         </div>
     </div>
 </body>
