@@ -44,8 +44,9 @@
   </head>
   <body>
     <nav class="navtop">
-        <b>JPJ Marketplace</b>
+        
         <div>
+        <a href="index.php"><h1>JPJ MarketPlace</h1></a>
         <a href="/index.php">Home</a> |
         
   
