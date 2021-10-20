@@ -34,7 +34,7 @@
   </head>
   <body>
     <nav>
-    <b>The Marketplace</b>
+    <b>JPJ Marketplace</b>
   <div class="right">
     <a href="/">Home</a> |
   

@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <title>JPJ MarketPlace</title>
-    <link href='/style.css'/>
+    <link rel='stylesheet' href='/style.css'/>
 </head>
 <body>
     <nav>
-        <b>JPJ MarketPlace</b>
+        
         <div class="right">
+            <b>JPJ MarketPlace</b>
             <a href="/login.php">Login</a>
             <a href="/">Home</a>
             <a href="/signup.php">signup</a>
