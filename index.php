@@ -20,7 +20,7 @@
             <a href="/">Home</a>
 
             <?php
-                if(isset($_SESSION['id'])){
+                if(isset($_SESSION['loggedin'])){
                     echo 'logged in';
                    echo '<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
 			        <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>';
