@@ -6,7 +6,7 @@ require_once "config.php";
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 
-$db = mysqli_connect('localhost', 'root', 'root', 'JPJMarketPlace')
+$db = mysqli_connect('localhost', 'root', 'root', 'JPJMarketPlace');
  
 // Processing form data when form is submitted
 if (isset($_POST['reg_user'])) {
@@ -18,11 +18,11 @@ if (isset($_POST['reg_user'])) {
 
     //Ensure the form is correctly filled.
     if (empty($username)) { 
-        array_push($username_err, "Username is required"); }
+       $username_err = "Username is required"; }
     if (empty($password)) { 
-        array_push($password_err, "Password is required"); }
+        $password_err = "Password is required"; }
     if ($password != $confirm_password) {
-	array_push($confirm_password_err, "The two passwords do not match");
+	    $confirm_password_err = "The two passwords do not match";
     }
 
 
@@ -33,7 +33,7 @@ if (isset($_POST['reg_user'])) {
   
     if ($user) { // if user exists
         if ($user['username'] === $username) {
-            array_push($username_err, "Username already exists");
+            $username_err = "Username already exists";
         }
 
     }
