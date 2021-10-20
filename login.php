@@ -36,10 +36,10 @@
     <nav>
     <b>JPJ Marketplace</b>
   <div class="right">
-    <a href="/">Home</a> |
+    <a href="/index.php">Home</a> |
   
-      <a href="/login">Log in</a> |
-      <a href="/signup">Sign up</a>
+      <a href="/login.php">Log in</a> |
+      <a href="/signup.php">Sign up</a>
     
   </div>
 </nav>
