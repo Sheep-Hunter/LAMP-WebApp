@@ -1,7 +1,7 @@
 <?php
     session_start();
     include('config.php');
-    if(!isset($_SESSION['id'])){
+    if(!isset($_SESSION['loggedin']) || $_SESSION["loggedin"] !== true){
         header('Location: login.php');
         exit;
     } else {
