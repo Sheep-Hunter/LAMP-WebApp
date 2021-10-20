@@ -17,11 +17,11 @@
     </nav>
     <div class='items'>
         <div id='item'>
-            <a herf="/delllaptop.php"><h1>Dell Laptop</h1></a>
+            <a href="/delllaptop.php"><h1>Dell Laptop</h1></a>
             <img src="/images/cat1.jpeg" />
         </div>
         <div id='item'>
-            <a herf="/cactus.php"><h1>Cactus</h1></a>
+            <a href="/cactus.php"><h1>Cactus</h1></a>
             <img src="/images/cat1.jpeg" />
         </div>
     </div>
