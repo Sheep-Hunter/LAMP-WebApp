@@ -49,6 +49,7 @@ if(empty($_SESSION["shopping_cart"])) {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel='stylesheet' href='/style.css'/>
   <link href="style2.css" rel="stylesheet" type="text/css">
+  <link href="style3.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 </head>
 <body>
@@ -87,8 +88,8 @@ if(empty($_SESSION["shopping_cart"])) {
                     <form method='post' action=''>
                     <input type='hidden' name='name' value=".$row['code']." />
                     <div class='image'><img src='".$row['image']."' /></div>
-                    <div class='price'>$".$row['price']."</div>
-                    <button type='submit' class='buy'>Buy Now</button>
+                    <div class='price'>".$row['price']."</div>
+                    <button type='submit' class='buy'>Add to cart</button>
                     </form>
                     </div>";
                         }
