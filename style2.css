@@ -67,7 +67,9 @@ body.loggedin {
 	margin: 0 0 10px 0;
 }
 
-body {margin:25px;}
+body {
+	
+}
 
 div.polaroid {
   width: 50%;
