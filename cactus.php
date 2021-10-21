@@ -65,7 +65,9 @@ if(empty($_SESSION["shopping_cart"])) {
                         echo '<a href="/login.php">Login</a>
                         <a href="/signup.php">signup</a>';}
                 ?>
-                <?php
+        </div>
+      </nav>
+      <?php
                   if(!empty($_SESSION["shopping_cart"])) {
                     $cart_count = count(array_keys($_SESSION["shopping_cart"]));
                   ?>
@@ -90,13 +92,10 @@ if(empty($_SESSION["shopping_cart"])) {
                         }
                 mysqli_close($con);
                 ?>
-
-<div style="clear:both;"></div>
+                <div style="clear:both;"></div>
 
 <div class="message_box" style="margin:10px 0px;">
 <?php echo $status; ?>
-</div>                      
-        </div>
-      </nav>
+</div>
 </body>
 </html>
