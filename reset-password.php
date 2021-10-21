@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_username = $_SESSION["login_user"];
 
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_password, $param_username);
+            mysqli_stmt_bind_param($stmt, "ss", $param_password, $param_username);
             
             
             
