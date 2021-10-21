@@ -81,7 +81,7 @@ if(empty($_SESSION["shopping_cart"])) {
                   }
                 ?>
                 <?php
-                $result = mysqli_query($con,"SELECT * FROM products");
+                $result = mysqli_query($db,"SELECT * FROM products");
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<div class='product_wrapper'>
                     <form method='post' action=''>
@@ -92,7 +92,7 @@ if(empty($_SESSION["shopping_cart"])) {
                     </form>
                     </div>";
                         }
-                mysqli_close($con);
+                mysqli_close($db);
                 ?>
                 <div style="clear:both;"></div>
 
