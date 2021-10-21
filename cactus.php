@@ -2,20 +2,22 @@
 session_start();
 include('config.php');
 $status="";
-if (isset($_POST['name']) && $_POST['name']!=""){
-$name = $_POST['name'];
+if (isset($_POST['id']) && $_POST['id']!=""){
+$code = $_POST['id'];
 $result = mysqli_query(
 $con,
-"SELECT * FROM products WHERE category='cactus'"
+"SELECT * FROM products WHERE id='$code'"
 );
 $row = mysqli_fetch_assoc($result);
 $name = $row['name'];
+$code = $row['id'];
 $price = $row['price'];
 $image = $row['image'];
 
 $cartArray = array(
 	$code=>array(
 	'name'=>$name,
+	'id'=>$code,
 	'price'=>$price,
 	'quantity'=>1,
 	'image'=>$image)
