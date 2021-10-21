@@ -22,7 +22,8 @@
 			<div>
 				<a href="index.php"><h1>JPJ MarketPlace</h1></a>
 				<a href="/">Home</a>
-				<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
+				<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>				
+				<a href="shopping_cart.php"><i style="font-size:24px" class="fa">&#xf07a;</i></a>
 				<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
 			</div>
 		</nav>
