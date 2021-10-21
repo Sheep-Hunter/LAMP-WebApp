@@ -21,67 +21,80 @@
                     else {
                         echo '<a href="/login.php">Login</a>
                         <a href="/signup.php">signup</a>';}
-                ?>                      
+                ?>
+                <?php
+                  if(!empty($_SESSION["shopping_cart"])) {
+                    $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+                  ?>
+                  <div class="cart_div">
+                  <a href="shopping_cart.php"><img src=<?php echo $data['image']; ?> /> Cart<span>
+                  <?php echo $cart_count; ?></span></a>
+                  </div>
+                <?php
+                  }
+                ?>
+                <?php
+                $result = mysqli_query($con,"SELECT * FROM `products`");
+                while($row = mysqli_fetch_assoc($result)){
+                    echo "<div class='product_wrapper'>
+                    <form method='post' action=''>
+                    <input type='hidden' name='name' value=".$row['name']." />
+                    <div class='image'><img src='".$row['image']."' /></div>
+                    <div class='price'>$".$row['price']."</div>
+                    <button type='submit' class='buy'>Buy Now</button>
+                    </form>
+                    </div>";
+                        }
+                mysqli_close($con);
+                ?>
+
+<div style="clear:both;"></div>
+
+<div class="message_box" style="margin:10px 0px;">
+<?php echo $status; ?>
+</div>                      
         </div>
       </nav>
 
-
 <?php
-include "config.php";
-$records = mysqli_query($db,"SELECT * FROM products WHERE category = 'cactus'");
-while($data = mysqli_fetch_array($records))
-{
-?>
-	<div class="product-item">
-		<form method="post" action="index.php?action=add&code=<?php echo $data["id"]; ?>">
-		<div class="product-image"><img src="<?php echo $data["image"]; ?>"></div>
-		<div class="product-tile-footer">
-		<div class="product-title"><?php echo $data["name"]; ?></div>
-		<div class="product-price"><?php echo $data["price"]; ?></div>
-		<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="1" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
-		</div>
-		</form>
-	</div>
-<?php mysqli_close($db);
+session_start();
+include('config.php');
+$status="";
+if (isset($_POST['name']) && $_POST['name']!=""){
+$name = $_POST['name'];
+$result = mysqli_query(
+$con,
+"SELECT * FROM products WHERE name='$name'"
+);
+$row = mysqli_fetch_assoc($result);
+$name = $row['name'];
+$price = $row['price'];
+$image = $row['image'];
+
+$cartArray = array(
+	$code=>array(
+	'name'=>$name,
+	'price'=>$price,
+	'quantity'=>1,
+	'image'=>$image)
+);
+
+if(empty($_SESSION["shopping_cart"])) {
+    $_SESSION["shopping_cart"] = $cartArray;
+    $status = "<div class='box'>Product is added to your cart!</div>";
+}else{
+    $array_keys = array_keys($_SESSION["shopping_cart"]);
+    if(in_array($code,$array_keys)) {
+	$status = "<div class='box' style='color:red;'>
+	Product is already added to your cart!</div>";	
+    } else {
+    $_SESSION["shopping_cart"] = array_merge(
+    $_SESSION["shopping_cart"],
+    $cartArray
+    );
+    $status = "<div class='box'>Product is added to your cart!</div>";
 	}
-?>
 
-<?php
-// Check to make sure the id parameter is specified in the URL
-if (isset($_GET['id'])) {
-    // Prepare statement and execute, prevents SQL injection
-    $stmt = $pdo->prepare('SELECT * FROM products WHERE id = ?');
-    $stmt->execute([$_GET['id']]);
-    // Fetch the product from the database and return the result as an Array
-    $product = $stmt->fetch(PDO::FETCH_ASSOC);
-    // Check if the product exists (array is not empty)
-    if (!$product) {
-        // Simple error to display if the id for the product doesn't exists (array is empty)
-        exit('Product does not exist!');
-    }
-} else {
-    // Simple error to display if the id wasn't specified
-    exit('Product does not exist!');
+	}
 }
 ?>
-
-<div class="product content-wrapper">
-    <img src="<?php echo $data["image"]; ?>" width="500" height="500" alt="<?=$product['name']?>">
-    <div>
-        <h1 class="name"><?=$product['name']?></h1>
-        <span class="price">
-            &dollar;<?=$product['price']?>
-            <?php if ($product['rrp'] > 0): ?>
-            <span class="rrp">&dollar;<?=$product['rrp']?></span>
-            <?php endif; ?>
-        </span>
-        <form action="index.php?page=cart" method="post">
-            <input type="number" name="quantity" value="1" min="1" max="<?=$product['quantity']?>" placeholder="Quantity" required>
-            <input type="hidden" name="product_id" value="<?=$product['id']?>">
-            <input type="submit" value="Add To Cart">
-        </form>
-        <div class="description">
-            <?=$product['desc']?>
-        </div>
-    </div>
-</div>
