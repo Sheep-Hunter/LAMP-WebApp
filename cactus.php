@@ -1,3 +1,46 @@
+<?php
+session_start();
+include('config.php');
+$status="";
+if (isset($_POST['name']) && $_POST['name']!=""){
+$name = $_POST['name'];
+$result = mysqli_query(
+$con,
+"SELECT * FROM products WHERE name='$name'"
+);
+$row = mysqli_fetch_assoc($result);
+$name = $row['name'];
+$price = $row['price'];
+$image = $row['image'];
+
+$cartArray = array(
+	$code=>array(
+	'name'=>$name,
+	'price'=>$price,
+	'quantity'=>1,
+	'image'=>$image)
+);
+
+if(empty($_SESSION["shopping_cart"])) {
+    $_SESSION["shopping_cart"] = $cartArray;
+    $status = "<div class='box'>Product is added to your cart!</div>";
+}else{
+    $array_keys = array_keys($_SESSION["shopping_cart"]);
+    if(in_array($code,$array_keys)) {
+	$status = "<div class='box' style='color:red;'>
+	Product is already added to your cart!</div>";	
+    } else {
+    $_SESSION["shopping_cart"] = array_merge(
+    $_SESSION["shopping_cart"],
+    $cartArray
+    );
+    $status = "<div class='box'>Product is added to your cart!</div>";
+	}
+
+	}
+}
+?>
+
 <html>
 <head>
   <title>Cactus Products</title>
@@ -55,46 +98,5 @@
 </div>                      
         </div>
       </nav>
-
-<?php
-session_start();
-include('config.php');
-$status="";
-if (isset($_POST['name']) && $_POST['name']!=""){
-$name = $_POST['name'];
-$result = mysqli_query(
-$con,
-"SELECT * FROM products WHERE name='$name'"
-);
-$row = mysqli_fetch_assoc($result);
-$name = $row['name'];
-$price = $row['price'];
-$image = $row['image'];
-
-$cartArray = array(
-	$code=>array(
-	'name'=>$name,
-	'price'=>$price,
-	'quantity'=>1,
-	'image'=>$image)
-);
-
-if(empty($_SESSION["shopping_cart"])) {
-    $_SESSION["shopping_cart"] = $cartArray;
-    $status = "<div class='box'>Product is added to your cart!</div>";
-}else{
-    $array_keys = array_keys($_SESSION["shopping_cart"]);
-    if(in_array($code,$array_keys)) {
-	$status = "<div class='box' style='color:red;'>
-	Product is already added to your cart!</div>";	
-    } else {
-    $_SESSION["shopping_cart"] = array_merge(
-    $_SESSION["shopping_cart"],
-    $cartArray
-    );
-    $status = "<div class='box'>Product is added to your cart!</div>";
-	}
-
-	}
-}
-?>
+</body>
+</html>
