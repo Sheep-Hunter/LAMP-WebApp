@@ -56,7 +56,7 @@ if (isset($_POST['action']) && $_POST['action']=="change"){
 
     <div class="cart">
 <?php
-if(isset($_POST['action'])){
+if(isset($_SESSION["shopping_cart"])){
     $total_price = 0;
 ?>	
 <table class="table">
