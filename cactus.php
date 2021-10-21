@@ -70,14 +70,14 @@ if(empty($_SESSION["shopping_cart"])) {
                 ?>
         </div>
       </nav>
-      <?php
-                  if(!empty($_SESSION["shopping_cart"])) {
-                    $cart_count = count(array_keys($_SESSION["shopping_cart"]));
-                  ?>
-                  <div class="cart_div">
-                  <a href="shopping_cart.php"><img src=<?php echo $data['image']; ?> /> Cart<span>
-                  <?php echo $cart_count; ?></span></a>
-                  </div>
+                <?php
+                if(!empty($_SESSION["shopping_cart"])) {
+                $cart_count = count(array_keys($_SESSION["shopping_cart"]));
+                ?>
+                <div class="cart_div">
+                <a href="shopping_cart.php"><img src=<?php echo $data['image']; ?> /> Cart<span>
+                <?php echo $cart_count; ?></span></a>
+                </div>
                 <?php
                   }
                 ?>
@@ -86,8 +86,9 @@ if(empty($_SESSION["shopping_cart"])) {
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<div class='product_wrapper'>
                     <form method='post' action=''>
-                    <input type='hidden' name='name' value=".$row['code']." />
+                    <input type='hidden' name='code' value=".$row['code']." />
                     <div class='image'><img src='".$row['image']."' /></div>
+                    <div class='name'>".$row['name']."</div>
                     <div class='price'>".$row['price']."</div>
                     <button type='submit' class='buy'>Add to cart</button>
                     </form>
@@ -97,8 +98,8 @@ if(empty($_SESSION["shopping_cart"])) {
                 ?>
                 <div style="clear:both;"></div>
 
-<div class="message_box" style="margin:10px 0px;">
-<?php echo $status; ?>
-</div>
+                <div class="message_box" style="margin:10px 0px;">
+                <?php echo $status; ?>
+                </div>
 </body>
 </html>
