@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 </head>
 <body>
-      <nav class="navtop">
+    <nav class="navtop">
         
         <div>
              <a href="index.php"><h1>JPJ MarketPlace</h1></a>
@@ -29,9 +29,6 @@
                               <a href="/signup.php">signup</a>';}
                 ?>                      
         </div>
-      </nav>
-                    
-                    
-                    
+    </nav>
 </body>           
 </html>
