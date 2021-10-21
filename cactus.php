@@ -99,7 +99,7 @@ if(empty($_SESSION["shopping_cart"])) {
                 <div style="clear:both;"></div>
 
                 <div class="message_box" style="margin:10px 0px;">
-                <?php echo $status; echo $_SESSION["shopping_cart"]; ?>
+                <?php echo $status; echo $_SESSION["shopping_cart"].[0]; echo $_SESSION["shopping_cart"].[1]; echo $_SESSION["shopping_cart"].[2]  ?>
                 </div>
 </body>
 </html>
