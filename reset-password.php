@@ -48,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             // Set parameters
             $param_password = md5($new_password);
-            $param_id = $_SESSION["login_user"];
+            $param_id = $_SESSION["id"];
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
