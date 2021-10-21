@@ -49,6 +49,7 @@ while($data = mysqli_fetch_array($records))
     <td><?php echo $data['name']; ?></td>
     <td><?php echo $data['price']; ?></td>
     <td><img src="<?php echo $data['image']; ?>" width="100" height="100"></td>
+    <td><button id="addItem" class="btn btn-success btn-md">Add to cart</button></td>
   </tr>	
 <?php
 }
