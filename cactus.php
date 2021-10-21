@@ -99,7 +99,7 @@ if(empty($_SESSION["shopping_cart"])) {
                 <div style="clear:both;"></div>
 
                 <div class="message_box" style="margin:10px 0px;">
-                <?php echo $status; echo $cartArray[0]; ?>
+                <?php echo $status; echo $cartArray[0][1]; echo $cartArray[1]; echo $cartArray[2]; ?>
                 </div>
 </body>
 </html>
