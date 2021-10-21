@@ -6,7 +6,7 @@ if (isset($_POST['name']) && $_POST['name']!=""){
 $name = $_POST['name'];
 $result = mysqli_query(
 $con,
-"SELECT * FROM products WHERE name='$name'"
+"SELECT * FROM products WHERE category='cactus'"
 );
 $row = mysqli_fetch_assoc($result);
 $name = $row['name'];
