@@ -117,6 +117,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <?php
                     if(isset($_SESSION['loggedin'])){
                         echo '<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
+                        <a href="shopping_cart.php"><i style="font-size:24px" class="fa">&#xf07a;</i></a>
                         <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>';
                     }                   
                     else {
