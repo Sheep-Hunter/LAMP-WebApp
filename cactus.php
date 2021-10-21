@@ -27,21 +27,21 @@
 
 
 <?php
-$product_array = $db->runQuery("SELECT * FROM products WHERE category = 'cactus'");
-if (!empty($product_array)) { 
-	foreach($product_array as $key=>$value){
+include "config.php";
+$records = mysqli_query($db,"SELECT * FROM products WHERE category = 'cactus'");
+while($data = mysqli_fetch_array($records))
+{
 ?>
 	<div class="product-item">
-		<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-		<div class="product-image"><img src="<?php echo $product_array[$key]["image"]; ?>"></div>
+		<form method="post" action="index.php?action=add&code=<?php echo $data["id"]; ?>">
+		<div class="product-image"><img src="<?php echo $data["image"]; ?>"></div>
 		<div class="product-tile-footer">
-		<div class="product-title"><?php echo $product_array[$key]["name"]; ?></div>
-		<div class="product-price"><?php echo "$".$product_array[$key]["price"]; ?></div>
+		<div class="product-title"><?php echo $data["name"]; ?></div>
+		<div class="product-price"><?php echo $data["price"]; ?></div>
 		<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
 		</div>
 		</form>
 	</div>
-<?php
+<?php mysqli_close($db);
 	}
-}
 ?>
