@@ -25,39 +25,22 @@
       </nav>
 
 
-
-
-
-
-<table border="2">
-  <tr>
-    <td>Product</td>
-    <td>Price</td>
-    <td>Image</td>
-  </tr>
-
 <?php
-
-include "config.php"; // Using database connection file here
-
-$records = mysqli_query($db,"select * from products WHERE category = 'cactus'"); // fetch data from database
-
-while($data = mysqli_fetch_array($records))
-{
+$product_array = $db->runQuery("SELECT * FROM products WHERE category = 'cactus'");
+if (!empty($product_array)) { 
+	foreach($product_array as $key=>$value){
 ?>
-  <tr>
-    <td><?php echo $data['name']; ?></td>
-    <td><?php echo $data['price']; ?></td>
-    <td><img src="<?php echo $data['image']; ?>" width="100" height="100"></td>
-    <td><button id="addItem" class="btn btn-success btn-md">Add to cart</button></td>
-  </tr>	
+	<div class="product-item">
+		<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+		<div class="product-image"><img src="<?php echo $product_array[$key]["image"]; ?>"></div>
+		<div class="product-tile-footer">
+		<div class="product-title"><?php echo $product_array[$key]["name"]; ?></div>
+		<div class="product-price"><?php echo "$".$product_array[$key]["price"]; ?></div>
+		<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+		</div>
+		</form>
+	</div>
 <?php
+	}
 }
 ?>
-
-</table>
-
-<?php mysqli_close($db);  // close connection ?>
-
-</body>
-</html>
