@@ -2,22 +2,22 @@
 session_start();
 include('config.php');
 $status="";
-if (isset($_POST['id']) && $_POST['id']!=""){
-$code = $_POST['id'];
+if (isset($_POST['code']) && $_POST['code']!=""){
+$code = $_POST['code'];
 $result = mysqli_query(
 $db,
 "SELECT * FROM products WHERE category='cactus'"
 );
 $row = mysqli_fetch_assoc($result);
 $name = $row['name'];
-$code = $row['id'];
+$code = $row['code'];
 $price = $row['price'];
 $image = $row['image'];
 
 $cartArray = array(
 	$code=>array(
 	'name'=>$name,
-	'id'=>$code,
+	'code'=>$code,
 	'price'=>$price,
 	'quantity'=>1,
 	'image'=>$image)
@@ -85,7 +85,7 @@ if(empty($_SESSION["shopping_cart"])) {
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<div class='product_wrapper'>
                     <form method='post' action=''>
-                    <input type='hidden' name='name' value=".$row['name']." />
+                    <input type='hidden' name='name' value=".$row['code']." />
                     <div class='image'><img src='".$row['image']."' /></div>
                     <div class='price'>$".$row['price']."</div>
                     <button type='submit' class='buy'>Buy Now</button>
