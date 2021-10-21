@@ -86,7 +86,7 @@ foreach ($_SESSION["shopping_cart"] as $product){
 <form method='post' action=''>
 <input type='hidden' name='code' value="<?php echo $product["code"]; ?>" />
 <input type='hidden' name='action' value="change" />
-<select name='quantity' class='quantity' onChange="this.form.submit">
+<select name='quantity' class='quantity' onChange="this.form.submit()">
   <!--hidden first option -->
   <option value="1" selected="selected" hidden>1</option>
   <option <?php if($product["quantity"]==0) echo "selected";?> value="0">0</option>
