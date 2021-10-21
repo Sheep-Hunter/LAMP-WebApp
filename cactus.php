@@ -5,8 +5,8 @@ $status="";
 if (isset($_POST['id']) && $_POST['id']!=""){
 $code = $_POST['id'];
 $result = mysqli_query(
-$con,
-"SELECT * FROM products WHERE id='$code'"
+$db,
+"SELECT * FROM products WHERE category='cactus'"
 );
 $row = mysqli_fetch_assoc($result);
 $name = $row['name'];
@@ -81,7 +81,7 @@ if(empty($_SESSION["shopping_cart"])) {
                   }
                 ?>
                 <?php
-                $result = mysqli_query($con,"SELECT * FROM `products`");
+                $result = mysqli_query($con,"SELECT * FROM products");
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<div class='product_wrapper'>
                     <form method='post' action=''>
