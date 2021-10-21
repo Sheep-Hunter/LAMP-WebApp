@@ -29,12 +29,12 @@
 
 
 
-<!-- <table border="2">
+<table border="2">
   <tr>
     <td>Product</td>
     <td>Price</td>
     <td>Image</td>
-  </tr> -->
+  </tr>
 
 <?php
 
