@@ -25,6 +25,7 @@
             <?php
                 if(isset($_SESSION['loggedin'])){
                     echo '<a style="float:right" href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
+                    <a href="shopping_cart.php"><i style="font-size:24px" class="fa">&#xf07a;</i></a>
 			        <a style="float:right" href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>';
                 }                   
                 else {
