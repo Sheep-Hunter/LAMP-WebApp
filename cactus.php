@@ -87,8 +87,8 @@ if(empty($_SESSION["shopping_cart"])) {
                     <form method='post' action=''>
                     <input type='hidden' name='name' value=".$row['name']." />
                     <div class='image'><img src='".$row['image']."' /></div>
-                    <div class='price'>$".$row['price']."</div>
-                    <button type='submit' class='buy'>Buy Now</button>
+                    <div class='price'>".$row['price']."</div>
+                    <button type='submit' class='buy'>Add to cart</button>
                     </form>
                     </div>";
                         }
