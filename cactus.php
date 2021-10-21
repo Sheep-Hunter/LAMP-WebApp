@@ -82,7 +82,7 @@ if(empty($_SESSION["shopping_cart"])) {
                   }
                 ?>
                 <?php
-                $result = mysqli_query($db,"SELECT * FROM products");
+                $result = mysqli_query($db,"SELECT * FROM products WHERE category = 'cactus'");
                 while($row = mysqli_fetch_assoc($result)){
                     echo "<div class='product_wrapper'>
                     <form method='post' action=''>
