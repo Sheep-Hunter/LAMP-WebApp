@@ -40,16 +40,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before updating the database
     if(empty($new_password_err) && empty($confirm_password_err)){
         // Prepare an update statement
-        $sql = "UPDATE users SET password = ? WHERE id = ?";
+        $sql = "UPDATE users SET password = ? WHERE username = ?";
         
         if($stmt = mysqli_prepare($db, $sql)){
             
             // Set parameters
             $param_password = md5($new_password);
-            $param_id = $_SESSION["id"];
+            $param_username = $_SESSION["login_user"];
 
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "si", $param_password, $param_id);
+            mysqli_stmt_bind_param($stmt, "si", $param_password, $param_username);
             
             
             
@@ -97,7 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <h2>Reset Password</h2>
             <tr>
 						<td>Username:</td>
-						<td><?=$_SESSION['username']?></td>
+						<td><?=$_SESSION['login_user']?></td>
 					</tr>
             <p>Please fill out this form to reset your password.</p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
